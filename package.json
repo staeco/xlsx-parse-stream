@@ -1,0 +1,43 @@
+{
+  "name": "xlsx-parse-stream",
+  "version": "1.0.0",
+  "description": "Streaming XLSX parser for node ",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/staeco/xlsx-parse-stream.git"
+  },
+  "scripts": {
+    "test": "mocha test --timeout 10000",
+    "lint": "eslint index.js test --fix"
+  },
+  "author": "Contra <yo@contra.io> (http://contra.io)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/staeco/xlsx-parse-stream/issues"
+  },
+  "homepage": "https://github.com/staeco/xlsx-parse-stream#readme",
+  "dependencies": {
+    "duplexify": "^4.0.0",
+    "exceljs": "github:contra/exceljs#fix-streams",
+    "merge2": "^1.4.1",
+    "readable-stream": "^3.6.0",
+    "through2": "^4.0.0"
+  },
+  "devDependencies": {
+    "@stae/linters": "^1.1.0",
+    "get-stream": "^6.0.0",
+    "mocha": "^8.0.0",
+    "should": "^13.0.0"
+  },
+  "engines": {
+    "node": ">=12"
+  },
+  "keywords": [
+    "stream",
+    "xlsx",
+    "exceljs",
+    "transform",
+    "convert"
+  ]
+}
