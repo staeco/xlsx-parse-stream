@@ -1,8 +1,7 @@
 /* eslint-disable no-loops/no-loops */
 const Excel = require('exceljs')
-const through = require('through2')
 const duplex = require('duplexify')
-const { Readable, finished } = require('readable-stream')
+const { Readable, PassThrough, finished } = require('stream')
 
 const matchSelector = (selector, worksheet) =>
   selector.includes('*') || selector.includes(worksheet.name)
@@ -19,7 +18,7 @@ const handleError = (err, isEnded) => {
 module.exports = ({ mapHeaders, mapValues, selector = '*' } = {}) => {
   if (selector && !Array.isArray(selector)) selector = [ selector ]
   let isEnded = false
-  const input = through()
+  const input = new PassThrough()
   const reader = new Excel.stream.xlsx.WorkbookReader(input)
   const createReader = async function* () {
     try {
@@ -58,7 +57,7 @@ module.exports = ({ mapHeaders, mapValues, selector = '*' } = {}) => {
 
 module.exports.getSelectors = () => {
   let isEnded = false
-  const input = through()
+  const input = new PassThrough()
   const reader = new Excel.stream.xlsx.WorkbookReader(input)
   const createReader = async function* () {
     yield '*'
