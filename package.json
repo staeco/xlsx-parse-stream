@@ -19,7 +19,7 @@
   "homepage": "https://github.com/staeco/xlsx-parse-stream#readme",
   "dependencies": {
     "duplexify": "^4.0.0",
-    "exceljs": "github:contra/exceljs#fix-streams"
+    "exceljs": "github:yocontra/exceljs#fix-streams"
   },
   "devDependencies": {
     "@stae/linters": "^1.1.0",
