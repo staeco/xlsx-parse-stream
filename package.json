@@ -1,6 +1,6 @@
 {
   "name": "xlsx-parse-stream",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Streaming XLSX parser for node ",
   "main": "index.js",
   "repository": {
@@ -19,7 +19,8 @@
   "homepage": "https://github.com/staeco/xlsx-parse-stream#readme",
   "dependencies": {
     "duplexify": "^4.0.0",
-    "exceljs": "github:yocontra/exceljs#fix-streams"
+    "exceljs": "github:yocontra/exceljs#fix-streams",
+    "unzipper": "github:kinolaev/node-unzipper#patch-1"
   },
   "devDependencies": {
     "@stae/linters": "^1.1.0",
